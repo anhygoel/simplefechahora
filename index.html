@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fecha y Hora</title>
+    <style>
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-align:;
+          margin-top:;
+      }
+      #fecha-hora {
+          font-size: 11px;
+          
+      }
+    </style>
+    <script>
+      function actualizarFechaHora() {
+          const ahora = new Date();
+          const opciones = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+          document.getElementById("fecha-hora").textContent = ahora.toLocaleDateString('es-ES', opciones);
+      }
+      setInterval(actualizarFechaHora, 1000);
+      window.onload = actualizarFechaHora;
+    </script>
+  </head>
+  <body>
+    <div id="fecha-hora"></div>
+  </body>
+</html>
